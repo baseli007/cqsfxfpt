@@ -1,0 +1,42 @@
+package com.hltech.controller.system;
+
+
+import java.util.List;
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.hltech.controller.index.BaseController;
+import com.hltech.entity.PersonMap;
+
+import com.hltech.mapper.PersonMapper;
+
+/**
+ * 信访人控制器
+ * @author jjl-281
+ *
+ */
+@Controller
+@RequestMapping("/resources/")
+public class PersonController extends BaseController {
+	@Inject
+	private  PersonMapper personMapper;
+	/**
+	 * 
+	 *            返回所有person信息
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping("getperson")
+	public List<PersonMap> findByAll() {
+		//获取前端请求
+		//调用查询
+		//返回结果集
+	
+		return null;
+	}
+
+}

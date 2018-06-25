@@ -1,0 +1,116 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test----------</title>
+<script src="js/jquery-1.11.3.min.js"></script>
+
+<script src="js/jquery/jquery.form.js"></script>
+
+<meta name="description" content="overview &amp; stats" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+<!-- bootstrap & fontawesome -->
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet"
+	href="font-awesome/4.5.0/css/font-awesome.min.css" />
+
+<!-- page specific plugin styles -->
+
+<!-- text fonts -->
+<link rel="stylesheet" href="css/fonts.googleapis.com.css" />
+
+<!-- ace styles -->
+<link rel="stylesheet" href="css/ace.min.css"
+	class="ace-main-stylesheet" id="main-ace-style" />
+
+<!--[if lte IE 9]>
+			<link rel="stylesheet" href="css/ace-part2.min.css" class="ace-main-stylesheet" />
+		<![endif]-->
+<link rel="stylesheet" href="css/ace-skins.min.css" />
+<link rel="stylesheet" href="css/ace-rtl.min.css" />
+<link rel="stylesheet" href="css/jquery-ui.custom.min.css" />
+		<link rel="stylesheet" href="css/chosen.min.css" />
+		<link rel="stylesheet" href="css/bootstrap-datepicker3.min.css" />
+		<link rel="stylesheet" href="css/bootstrap-timepicker.min.css" />
+		<link rel="stylesheet" href="css/daterangepicker.min.css" />
+		<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css" />
+		<link rel="stylesheet" href="css/bootstrap-colorpicker.min.css" />
+<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="css/ace-ie.min.css" />
+		<![endif]-->
+
+<!-- inline styles related to this page -->
+
+<!-- ace settings handler -->
+<script src="js/ace-extra.min.js"></script>
+
+
+<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+<!--[if lte IE 8]>
+		<script src="js/html5shiv.min.js"></script>
+		<script src="js/respond.min.js"></script>
+		[endif]-->
+</head>
+<body>
+   <script type="text/javascript"
+	src="${pageContext.request.contextPath}/js/system/user/list.js"></script>
+<div class="row">
+	<div class="form-inline col-xs-12 col-md-12">
+		<form action="" role="form" id="searchForm" name="searchForm"
+			class="form-inline">
+			<div class="input-group">
+				<span class="input-group-addon"> 
+				<i class="ace-icon fa fa-check"></i>
+				</span> <input type="text" id="accountName" name="userFormMap.accountName"
+					class="form-control search-query" placeholder="请输入账号"> <span
+					class="input-group-btn"> <a href="javascript:void(0)"
+					id="search" class="btn btn-default btn-sm"> <span
+						class="ace-icon fa fa-search icon-on-right bigger-110"></span> 查询
+				</a> <a href="javascript:grid.exportData('/user/export.shtml')"
+					id="search" class="btn btn-info btn-sm"> <span
+						class="ace-icon fa fa-reply icon-only icon-on-right bigger-110"></span>
+						导出excel
+				</a>
+				</span>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="hr hr-18 dotted hr-double"></div>
+<div class="row" style="border:1px solid red">
+	<div class="form-inline col-xs-12 col-md-12"  style="border:1px solid red">
+		<c:forEach items="${res}" var="key">
+			${key.description}
+		</c:forEach>
+	</div>
+	<div class="col-xs-12"  style="border:1px solid red">
+	     <table><tbody>
+	      <c:forEach items="${requestScope.user}" var="user">  
+        <tr>  
+        <td>${user.id}</td>  
+        <td>${user.zz}</td>  
+        <td>${user.txdz}</td>        
+    </tr>  
+</c:forEach>  
+	      </tbody></table>
+	      <c:if test="${requestScope.user != null}">  
+            <h3>HttpSession对象中也存了用户信息！用户信息如下：</h3>   
+                              用户编号：${requestScope.user.get(0).id}  
+            <br>  
+                              用户名：${requestScope.user.get(0).zz}  
+            <br>  
+                               年龄：${requestScope.user.get(0).txdz}  
+        </c:if>  
+	</div>
+</div>
+<!-- /.row -->
+<a href="user/findByPage.shtml">aaaaaaaaaaaaaaaaaaaaaaaa</a>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+package com.hltech.entity;
+
+import com.hltech.annotation.TableSeg;
+import com.hltech.util.FormMap;
+/**
+ * 实体表Person
+ * @author jjl-281
+ */
+@TableSeg(tableName = "person", id="xf_user_id")
+public class PersonMap extends FormMap<String,Object>{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+}

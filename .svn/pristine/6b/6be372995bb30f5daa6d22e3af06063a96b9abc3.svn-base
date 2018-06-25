@@ -1,0 +1,20 @@
+package com.hltech.controller.letterquery;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.hltech.controller.index.BaseController;
+
+
+/**
+ * 信访查询（未登录）
+ * @author MrLi
+ *
+ */
+@Controller
+@RequestMapping("/letter/")
+public class LetterQueryController extends BaseController {
+	
+	
+	
+}

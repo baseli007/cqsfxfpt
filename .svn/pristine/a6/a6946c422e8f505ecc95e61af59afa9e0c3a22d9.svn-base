@@ -1,0 +1,23 @@
+package com.hltech.mapper;
+
+import java.util.List;
+
+import com.hltech.entity.PersonMap;
+import com.hltech.mapper.base.BaseMapper;
+
+
+
+/**
+ * 查询接口 Person
+ * 
+ * @author jjl-281
+ *
+ */
+public interface PersonMapper extends BaseMapper{
+	/**
+	 * 返回信访人列表 List
+	 * 
+	 * @return areaList
+	 */
+	List<PersonMap> getPerson();
+}
